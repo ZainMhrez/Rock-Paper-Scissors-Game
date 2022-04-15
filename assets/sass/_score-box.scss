@@ -1,0 +1,47 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+/* Start Score box */
+.score-box {
+  width: 40em;
+
+  .score {
+    @include flexMixin(space-around, center);
+    padding: 1em 0em;
+    margin-top: 1em;
+    border: 2px dashed rgb(51, 51, 51, 0.5);
+    border-radius: 1em;
+
+    span {
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: $text-color;
+    }
+
+    .wins span {
+      color: $win-color;
+    }
+    .draws span {
+      color: $draw-color;
+    }
+    .loses span {
+      color: $lose-color;
+    }
+  }
+}
+/* End Score box */
+
+@include breakpoints(700px) {
+  .score-box {
+    width: 90%;
+  }
+}
+
+@include breakpoints(500px) {
+  .score-box {
+    margin-top: 2em;
+    .score {
+      flex-direction: column;
+    }
+  }
+}

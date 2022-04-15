@@ -1,0 +1,32 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+/* Start Global Rules */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+}
+h2 {
+  color: $secondary-color;
+  text-align: center;
+}
+/* End Global Rules */
+
+@include breakpoints(700px) {
+  body {
+    overflow: visible;
+  }
+}
+
+@include breakpoints(500px) {
+  body {
+    min-height: 120vh;
+  }
+}

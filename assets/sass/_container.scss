@@ -1,0 +1,35 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+/* Start Styling */
+main {
+  width: 100%;
+  min-height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 0.8em;
+  color: $main-color;
+}
+
+.container {
+  width: 80vw;
+  height: 80vh;
+  @include flexMixin(space-around, center);
+  flex-direction: column;
+  margin: auto;
+}
+
+@include breakpoints(700px) {
+  .container {
+    width: 100%;
+  }
+}
+
+@include breakpoints(500px) {
+  .container {
+    min-height: 120vh;
+    justify-content: space-between;
+  }
+}

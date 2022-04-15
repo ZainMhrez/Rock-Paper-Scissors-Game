@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Rock Paper Scissors Game" />
+    <!-- Google font Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Rock Paper Scissors Game</title>
+  </head>
+  <body>
+    <main>
+      <h1>Rock Paper Scissors Game</h1>
+      <div class="container">
+        <!-- Score -->
+        <div class="score-box">
+          <h2>Your Score</h2>
+          <div class="score">
+            <span class="wins">Wins: <span>0</span></span>
+            <span class="draws">Draws: <span>0</span></span>
+            <span class="loses">Loses: <span>0</span></span>
+          </div>
+        </div>
+
+        <!-- Rock Paper Scissors arena -->
+        <div class="arena">
+          <h2>Make a selection to shoot</h2>
+          <div class="choices">
+            <i id="rock" class="choice fas fa-hand-rock fa-8x"></i>
+            <i id="paper" class="choice fas fa-hand-paper fa-8x"></i>
+            <i id="scissors" class="choice fas fa-hand-scissors fa-8x"></i>
+          </div>
+        </div>
+
+        <button type="reset" class="reset">Reset Game</button>
+      </div>
+
+      <!-- A modal that open when the user chooses -->
+      <dia class="modal">
+        <div class="content">
+          <!-- result text -->
+          <p class="result-txt"></p>
+          <!-- result choices -->
+          <div class="final-choices">
+            <div class="my-choice">
+              <p>You Chose <span class="text"></span></p>
+              <i class="fas fa-8x"></i>
+            </div>
+            <div class="computer-choice">
+              <p>Computer Chose <span class="text"></span></p>
+              <i class="fas fa-8x"></i>
+            </div>
+          </div>
+        </div>
+      </dia>
+
+      <!-- Footer -->
+      <footer class="footer">
+        Coded by
+        <a href="https://www.linkedin.com/in/zain-mhrez/" target="_blank"
+          >Zain Mhrez</a
+        >.
+      </footer>
+    </main>
+
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>

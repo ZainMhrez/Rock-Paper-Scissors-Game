@@ -1,0 +1,86 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.modal {
+  display: none;
+  place-content: center;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  animation: fade-in 0.7s ease-out;
+
+  .content {
+    width: 40rem;
+    height: 60vh;
+    background-color: white;
+    border-radius: 12px;
+    padding: 2em;
+
+    .result-txt {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 500;
+    }
+
+    .final-choices {
+      height: 90%;
+      @include flexMixin(space-around, "");
+
+      /* My Choice */
+      .my-choice {
+        flex-basis: 50%;
+        @include flexMixin(space-around, center);
+        flex-direction: column;
+      }
+
+      /* Computer Choice */
+      .computer-choice {
+        flex-basis: 50%;
+        @include flexMixin(space-around, center);
+        flex-direction: column;
+      }
+
+      p {
+        color: $text-color;
+        font-weight: 500;
+        text-align: center;
+        font-size: 1.25rem;
+      }
+    }
+  }
+}
+
+@include breakpoints(700px) {
+  .modal .content {
+    width: 85vw;
+
+    .final-choices p {
+      font-size: 1rem;
+    }
+  }
+}
+
+@include breakpoints(500px) {
+  .modal .content {
+    height: 65vh;
+    width: 70vw;
+    padding-top: 1em;
+    .final-choices {
+      flex-direction: column;
+      gap: 1.5em;
+    }
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

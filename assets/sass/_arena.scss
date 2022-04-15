@@ -1,0 +1,75 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+/* Start Arena box */
+.arena {
+  width: 40em;
+
+  .choices {
+    @include flexMixin(space-between, center);
+    margin-top: 2em;
+
+    .choice {
+      color: #4b4453;
+      cursor: pointer;
+      transition: $transition;
+
+      &:hover {
+        color: $main-color;
+      }
+    }
+  }
+  #scissors {
+    transform: rotate(87deg);
+  }
+}
+/* End Arena box */
+
+/* Reset button */
+.reset {
+  border: none;
+  color: white;
+  padding: 1em 2em;
+  border-radius: 1em;
+  cursor: pointer;
+  background-image: linear-gradient(
+    to right,
+    #845ec2,
+    #965dc0,
+    #a75dbe,
+    #b75cbb,
+    #c55cb7,
+    #d05cb3,
+    #da5dae,
+    #e35fa9,
+    #ec62a3,
+    #f3659d,
+    #fa6a97,
+    #ff6f91
+  );
+  background-size: 200%;
+  background-position: left;
+  font-size: 1.125rem;
+  font-weight: 700;
+  transition: background-position 1s;
+
+  &:hover {
+    background-position: right;
+  }
+}
+
+@include breakpoints(700px) {
+  .arena {
+    width: 90%;
+  }
+}
+
+@include breakpoints(500px) {
+  .arena {
+    min-height: 70vh;
+    .choices {
+      height: 85%;
+      flex-direction: column;
+    }
+  }
+}

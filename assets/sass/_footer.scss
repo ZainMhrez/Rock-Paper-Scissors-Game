@@ -1,0 +1,22 @@
+@use "variables" as *;
+
+/* Start Footer */
+.footer {
+  width: 100%;
+  padding: 1em;
+  text-align: center;
+  color: $text-color;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.footer a {
+  text-decoration: none;
+  color: $main-color;
+  transition: color $transition;
+}
+
+.footer a:hover {
+  color: #b39cd0;
+}
+/* End Footer */
